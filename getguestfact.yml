@@ -7,11 +7,13 @@
     - vcinfo.yml
   vars:
    - guestname: myvm
+   - mydc: DC01
 
   tasks:
 
    - name: vm facts
      vmware_guest_facts:
+       datacenter: "{{ mydc }}"
        hostname: "{{ vchost }}"
        username: "{{ vcuser }}"
        password: "{{ vcpass }}"
