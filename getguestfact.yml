@@ -13,11 +13,11 @@
 
    - name: vm facts
      vmware_guest_facts:
-       datacenter: "{{ mydc }}"
        hostname: "{{ vchost }}"
        username: "{{ vcuser }}"
        password: "{{ vcpass }}"
        name: "{{ guestname }}"
+       datacenter: "{{ mydc }}"
        validate_certs: False
      register: myvm_facts
 
