@@ -6,7 +6,7 @@
   vars_files:
    - vcinfo.yml
   vars:
-   - guestname: rhel6
+   - myvmname: rhel6
 
   tasks:
 
@@ -15,7 +15,7 @@
       vcenter_hostname: "{{ vchost }}"
       username: "{{ vcuser }}"
       password: "{{ vcpass }}"
-      guest: "{{ guestname }}"
+      guest: "{{ myvmname }}"
       validate_certs: no
       vmware_guest_facts: yes
     register: rhel6_facts
