@@ -6,7 +6,7 @@
   vars_files:
    - vcinfo.yml
   vars:
-   - vmname: myvm
+   - myvmname: myvm
    - mydc: DC01
 
   tasks:
@@ -17,7 +17,7 @@
       hostname: "{{ vchost }}"
       username: "{{ vcuser }}"
       password: "{{ vcpass }}"
-      name: "{{ vmname }}"
+      name: "{{ myvmname }}"
       datacenter: "{{ mydc }}"
       state: poweredoff
     register: power_status
@@ -33,7 +33,7 @@
       hostname: "{{ vchost }}"
       username: "{{ vcuser }}"
       password: "{{ vcpass }}"
-      name: "{{ vmname }}"
+      name: "{{ myvmname }}"
       datacenter: "{{ mydc }}"
       state: absent
     register: myvm_facts
