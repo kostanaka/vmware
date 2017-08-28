@@ -6,8 +6,7 @@
   vars_files:
    - vcinfo.yml
   vars:
-   - guestname: rhel6
-   - prefix: myvm
+   - myvmname: myvm
    - mytemplate: rhel6-vmw
    - mydc: DC01
    - myds: Datastore
@@ -22,7 +21,7 @@
       hostname: "{{ vchost }}"
       username: "{{ vcuser }}"
       password: "{{ vcpass }}"
-      name: "{{ prefix }}"
+      name: "{{ myvmname }}"
       template: "{{ mytemplate }}"
       datacenter: "{{ mydc }}"
       state: poweredon
