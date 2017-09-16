@@ -10,6 +10,10 @@
 
   tasks:
 
+   - name: アクセス情報
+     debug:
+       msg: "vCenter Server host: {{ vchost }}"
+
    - name: ゲストの一覧情報取得
      vmware_vm_facts:
        hostname: "{{ vchost }}"
