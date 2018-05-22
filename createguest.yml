@@ -11,8 +11,7 @@
    - mydc: DC01
    - myds: Datastore
    - mynetwork: VM Network
-   - myipaddr: 192.168.0.101
-
+   - myipaddr: 192.168.0.201
   tasks:
 
   - name: ゲスト作成(1つ) - 電源ONおよびIPアドレスアサインを待つ
