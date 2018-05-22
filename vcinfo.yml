@@ -1,3 +1,3 @@
-# - vchost: vcenter-e0c9.rhpds.opentlc.com
+# - vchost: vcenter.local
 # - vcuser: root
-# - vcpass: r3dh4t1!
+# - vcpass: pass
