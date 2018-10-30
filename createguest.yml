@@ -23,7 +23,7 @@
       name: "{{ myvmname }}"
       template: "{{ mytemplate }}"
       datacenter: "{{ mydc }}"
-      folder: "/{{ mydc }}"
+      folder: ""
       state: poweredon
       wait_for_ip_address: yes
       disk:
