@@ -3,15 +3,16 @@
   hosts: localhost
   connection: local
   gather_facts: False
-  vars_files:
    - vcinfo.yml
   vars:
-   - myvmname: myvm
-   - mytemplate: rhel6-vmw
-   - mydc: DC01
-   - myds: Datastore
-   - mynetwork: VM Network
-   - myipaddr: 192.168.0.201
+   - myvmname: 'myvm'
+   - mytemplate: 'rhel75-vmw-tpl'
+   - mydc: 'DC01'
+   - myds: 'Datastore'
+   - mynetwork: 'VM Network'
+   - myipaddr: '192.168.1.201'
+   - mygateway: '192.168.1.1'
+   - mycluster: 'Cluster01'
   tasks:
 
   - name: ゲスト作成(1つ) - 電源ONおよびIPアドレスアサインを待つ
@@ -23,18 +24,19 @@
       name: "{{ myvmname }}"
       template: "{{ mytemplate }}"
       datacenter: "{{ mydc }}"
-      folder: ""
+      cluster: "{{ mycluster }}"
       state: poweredon
       wait_for_ip_address: yes
+      folder: "/"
       disk:
-        - size_gb: 20
+        - size_gb: 
           type: thin
           datastore: "{{ myds }}"
       networks: 
       - name: "{{ mynetwork }}"
-        gateway: 192.168.0.1
-        ip: "{{ myipaddr }}"
-        netmask: 255.255.255.0
+#        gateway: "{{ mygateway }}"
+#        ip: "{{ myipaddr }}"
+#        netmask: 255.255.255.0
     register: myvm_facts
 
   - name: 作成したVM情報の表示
